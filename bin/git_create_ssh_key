@@ -1,8 +1,10 @@
 #!/bin/bash
 GITHUB_ACCOUNT="$1"
 
+MAIL_DOMAIN=via-internet.de
 FLDR_DST=/Users/Shared/CLOUD/Development.GitHub/ssh/keys
 
-echo ssh-keygen -t rsa -C "${GITHUB_ACCOUNT}@via-internet.de" -f ${FLDR_DST}/id_rsa_${GITHUB_ACCOUNT}
+echo ssh-keygen -t rsa -C "${GITHUB_ACCOUNT}@${MAIL_DOMAIN}" -f ${FLDR_DST}/id_rsa_${GITHUB_ACCOUNT}
 echo "cd $HOME/.ssh && ln -s ${FLDR_DST}/id_rsa_${GITHUB_ACCOUNT}* ."
 echo "cat ${FLDR_DST}/id_rsa_${GITHUB_ACCOUNT}.pub"
+
